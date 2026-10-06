@@ -30,7 +30,7 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
-CREATE TABLE cart (
+CREATE TABLE order_lines (
     order_id INT NOT NULL,
     product_id INT NOT NULL,
     quantity INT NOT NULL CHECK (quantity > 0),
