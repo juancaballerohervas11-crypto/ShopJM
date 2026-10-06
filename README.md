@@ -27,7 +27,7 @@ The database is called `online_store`.
   * status (`cart`, `pending`, `shipped` or `delivered`)
   * total (of the order)
   * shipping_address
-* CART
+* ORDER_LINE
   * order_id (ORDERS)
   * product_id (PRODUCTS)
   * quantity
