@@ -1,36 +1,34 @@
 # ShopJM
-
+ 
 > ShopJM es un proyecto sencillo de modelo de tienda online creado por Marcos Aragón y Juan Caballero.
-
-## **1. Tablas de la base de datos:**
-
-* USUARIOS
-
-  * id_usuario
-  * nombre
+ 
+## **1. Tablas Base de Datos:**
+ 
+The database is called `online_store`.
+ 
+* USERS
+  * user_id
+  * name
   * email
-  * contraseña
-  * dirección (domicilio)
-  * rol (permisos)
-* PEDIDOS
-
-  * id_pedido
-  * id_usuario (USUARIOS)
-  * fecha
-  * estado
-  * total (de pedidos)
-  * direccion de envío
-* CARRITO
-
-  * id_pedido
-  * id_producto
-  * cantidad
-  * precio_unitario
-* PRODUCTOS
-
-  * id_producto
-  * nombre
-  * descripción
-  * precio
-  * imagen
+  * password
+  * address (home address)
+  * role (permissions: `customer` or `admin`)
+* PRODUCTS
+  * product_id
+  * name
+  * description
+  * price
   * stock
+  * image
+* ORDERS
+  * order_id
+  * user_id (USERS)
+  * order_date
+  * status (`cart`, `pending`, `shipped` or `delivered`)
+  * total (of the order)
+  * shipping_address
+* CART
+  * order_id (ORDERS)
+  * product_id (PRODUCTS)
+  * quantity
+  * unit_price
