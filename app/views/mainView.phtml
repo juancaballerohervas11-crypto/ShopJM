@@ -7,7 +7,17 @@
 </head>
 <body>
     <h1>ShopJM</h1>
-    <p><a href="index.php?login=1">Iniciar sesión</a> | <a href="index.php?register=1">Registrarme</a></p>
+
+    <?php
+    if(isset($_SESSION['user'])){
+        echo "Hola ".$_SESSION['user']->getUsername();
+    }
+    ?>
+
+
+
+
+    <p><a href="index.php?c=user&a=login">Iniciar sesión</a> | <a href="index.php?c=user&a=register">Registrarme</a></p>
     <h2>Productos</h2>
 </body>
 </html>

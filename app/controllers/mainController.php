@@ -1,38 +1,38 @@
 <?php
 // cargar modelos
-require_once(__DIR__ . "/../models/User.php");
-require_once(__DIR__ . "/../models/Product.php");
-require_once(__DIR__ . "/../models/Order.php");
-require_once(__DIR__ . "/../models/OrderLine.php");
-require_once(__DIR__ . "/../models/ProductRepository.php");
-require_once(__DIR__ . "/../models/OrderRepository.php");
-require_once(__DIR__ . "/../models/OrderLineRepository.php");
-require_once(__DIR__ . "/../db.php");
+require_once("models/User.php");
+require_once("models/Product.php");
+require_once("models/Order.php");
+require_once("models/OrderLine.php");
+require_once("models/ProductRepository.php");
+require_once("models/OrderRepository.php");
+require_once("models/OrderLineRepository.php");
+require_once("db.php");
        
 session_start();
 
 if (isset($_GET['c'])) {
     if ($_GET['c'] == 'user') {
-        require_once(__DIR__ . "/userController.php");
+        require_once("userController.php");
     }
     if ($_GET['c'] == 'product') {
-        require_once(__DIR__ . "/productController.php");
+        require_once("productController.php");
     }
 }
 
 // ver login
 if (isset($_GET['login'])) {
-    require_once(__DIR__ . '/../views/loginview.phtml');
+    require_once('views/loginview.phtml');
     exit;
 }
 
 // register
 if (isset($_GET['register'])) {
-    require_once(__DIR__ . '/../views/registerView.phtml');
+    require_once('views/registerView.phtml');
     exit;
 }
 
 // vista por defecto
 $products = ProductRepository::getProducts();
-require_once(__DIR__ . '/../views/mainView.phtml');
+require_once('views/mainView.phtml');
 ?>

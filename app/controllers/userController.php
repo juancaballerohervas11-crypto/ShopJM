@@ -18,11 +18,11 @@ if(isset($_POST['login'])){
             if($row['password']==md5($_POST['password'])){
 
                 $_SESSION['user']=new User($row['id'], $row['username']);
+                header('location:index.php');
+                exit;
             }
         }
     }
-    header('location:index.php');
-    exit;
 }
 
 if(isset($_POST['register'])){
